@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - CanBePickedUp
+  - VirtualCamera
+  - Enemy
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Blocking
+  - Consumables
+  - Enemies
+  - Ammo
+  - Grashka
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 4033527019
+    locked: 0
+  - name: Ground
+    uniqueID: 2472358001
+    locked: 0
+  - name: Characters
+    uniqueID: 1285369215
+    locked: 0
+  - name: Elevated
+    uniqueID: 1782724077
+    locked: 0
+  - name: Lava
+    uniqueID: 3617488267
+    locked: 0
+  - name: Objects
+    uniqueID: 2262455579
+    locked: 0

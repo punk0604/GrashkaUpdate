@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 9ed4413f1f989da4b8663bfdb61ebfff
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: levistus_attack-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1326
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee19b6f32d59fbd409849331c82bc4c5
+      internalID: -2008294504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1224
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3866df1ba7533dd4d852f70c6f81ea76
+      internalID: -1107962670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1122
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90f623f2a835e34eb6e3213e04970e7
+      internalID: 551844536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1020
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1b8979a4239d84c8810c13993c9c0d
+      internalID: -1687185785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 918
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb761bd4094dcde41aa01ddb0f51086f
+      internalID: -918660502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 816
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e42551f41d83494184f28b8e011fd93
+      internalID: -748056066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8ece43597ab8245a9bc40490273841
+      internalID: 43017148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e19a22a4af33d4aa0faa6d9b5d5db3
+      internalID: -318414063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 510
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb0e508e31f7f14f92377546276a2f0
+      internalID: -2098473552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32971c7d2ce0ec4e9d8596fa8bc6869
+      internalID: -1526111913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 306
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd069acaa7f5a340baa3ac9f74a4342
+      internalID: 618045507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff07cf734e10d8b45804c90ba5b17f25
+      internalID: 1720836748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbee6739a77d39488f5f61a8d17c732
+      internalID: -369232475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levistus_attack-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 102
+      alignment: 9
+      pivot: {x: 0.59, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a39d628545bf24eb5af32deb1db84b
+      internalID: 666822531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      levistus_attack-sheet_0: -2008294504
+      levistus_attack-sheet_1: -1107962670
+      levistus_attack-sheet_10: 618045507
+      levistus_attack-sheet_11: 1720836748
+      levistus_attack-sheet_12: -369232475
+      levistus_attack-sheet_13: 666822531
+      levistus_attack-sheet_2: 551844536
+      levistus_attack-sheet_3: -1687185785
+      levistus_attack-sheet_4: -918660502
+      levistus_attack-sheet_5: -748056066
+      levistus_attack-sheet_6: 43017148
+      levistus_attack-sheet_7: -318414063
+      levistus_attack-sheet_8: -2098473552
+      levistus_attack-sheet_9: -1526111913
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

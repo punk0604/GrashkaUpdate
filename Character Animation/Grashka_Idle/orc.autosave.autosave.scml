@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11" pixel_mode="1">
+    <folder id="0">
+        <file id="0" name="Grashka.png" width="120" height="120" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Grashka_body.png" width="120" height="120" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="Grashka_head.png" width="120" height="120" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="Grashka_right_arm - Copy.png" width="60" height="60" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="Grashka_right_arm.png" width="60" height="60" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="Leg1.png" width="64" height="64" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="Leg2.png" width="64" height="64" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="orc_weapon.png" width="64" height="64" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="Grashka_left_arm.png" width="60" height="60" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Grashka">
+        <obj_info name="pelvis" type="bone" w="12.7791" h="10"/>
+        <obj_info name="spine" type="bone" w="20.9259" h="10"/>
+        <obj_info name="head" type="bone" w="19.0822" h="10"/>
+        <obj_info name="Larm" type="bone" w="24.9293" h="10"/>
+        <obj_info name="Rarm" type="bone" w="23.3098" h="10"/>
+        <obj_info name="Lleg" type="bone" w="19.4524" h="10"/>
+        <obj_info name="Rleg" type="bone" w="18.7046" h="10"/>
+        <animation id="0" name="idle2" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <bone_ref id="0" timeline="0" key="0"/>
+                    <bone_ref id="1" parent="0" timeline="1" key="0"/>
+                    <bone_ref id="2" parent="1" timeline="2" key="0"/>
+                    <bone_ref id="3" parent="1" timeline="3" key="0"/>
+                    <bone_ref id="4" parent="1" timeline="4" key="0"/>
+                    <bone_ref id="5" parent="0" timeline="5" key="0"/>
+                    <bone_ref id="6" parent="0" timeline="6" key="0"/>
+                    <object_ref id="0" parent="1" timeline="7" key="0" z_index="0"/>
+                    <object_ref id="1" parent="2" timeline="8" key="0" z_index="1"/>
+                    <object_ref id="2" parent="4" timeline="9" key="0" z_index="2"/>
+                    <object_ref id="3" parent="6" timeline="10" key="0" z_index="3"/>
+                    <object_ref id="4" parent="5" timeline="11" key="0" z_index="4"/>
+                    <object_ref id="5" parent="3" timeline="12" key="0" z_index="5"/>
+                </key>
+                <key id="1" time="600">
+                    <bone_ref id="0" timeline="0" key="1"/>
+                    <bone_ref id="1" parent="0" timeline="1" key="0"/>
+                    <bone_ref id="2" parent="1" timeline="2" key="0"/>
+                    <bone_ref id="3" parent="1" timeline="3" key="1"/>
+                    <bone_ref id="4" parent="1" timeline="4" key="1"/>
+                    <bone_ref id="5" parent="0" timeline="5" key="1"/>
+                    <bone_ref id="6" parent="0" timeline="6" key="1"/>
+                    <object_ref id="0" parent="1" timeline="7" key="1" z_index="0"/>
+                    <object_ref id="1" parent="2" timeline="8" key="1" z_index="1"/>
+                    <object_ref id="2" parent="4" timeline="9" key="0" z_index="2"/>
+                    <object_ref id="3" parent="6" timeline="10" key="0" z_index="3"/>
+                    <object_ref id="4" parent="5" timeline="11" key="0" z_index="4"/>
+                    <object_ref id="5" parent="3" timeline="12" key="0" z_index="5"/>
+                </key>
+            </mainline>
+            <timeline id="0" obj="0" name="pelvis" object_type="bone">
+                <key id="0" spin="0">
+                    <bone y="7" angle="90"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <bone y="7" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="1" obj="1" name="spine" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="10" y="5" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="2" obj="2" name="head" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="16" y="-6" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="3" obj="3" name="Larm" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="15" y="9" angle="225"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <bone x="17" y="9" angle="225"/>
+                </key>
+            </timeline>
+            <timeline id="4" obj="4" name="Rarm" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="16" y="-18" angle="149.036"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <bone x="18" y="-18" angle="149.036"/>
+                </key>
+            </timeline>
+            <timeline id="5" obj="5" name="Lleg" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="-3" y="8" angle="270"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <bone x="-2" y="8" angle="270"/>
+                </key>
+            </timeline>
+            <timeline id="6" obj="6" name="Rleg" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="-3" y="-7" angle="90"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <bone x="-2" y="-7" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="7" name="Grashka_body">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="65" y="55" angle="270"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <object folder="0" file="1" x="66" y="55" angle="270"/>
+                </key>
+            </timeline>
+            <timeline id="8" name="Grashka_head">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="51" y="60" angle="268.331663"/>
+                </key>
+                <key id="1" time="600" spin="0">
+                    <object folder="0" file="2" x="52" y="60" angle="268.331663"/>
+                </key>
+            </timeline>
+            <timeline id="9" name="Grashka_right_arm">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-28" y="-20" angle="72.428741"/>
+                </key>
+            </timeline>
+            <timeline id="10" name="Rleg_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="-24" y="-28" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="11" name="Lleg_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="-25" y="-38" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="12" name="Larm_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="8" x="-21" y="-34" angle="90"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle" length="2000" interval="100">
+            <mainline>
+                <key id="0">
+                    <bone_ref id="0" timeline="4" key="0"/>
+                    <bone_ref id="1" parent="0" timeline="5" key="0"/>
+                    <bone_ref id="2" parent="1" timeline="6" key="0"/>
+                    <bone_ref id="3" parent="1" timeline="7" key="0"/>
+                    <bone_ref id="4" parent="1" timeline="8" key="0"/>
+                    <bone_ref id="5" parent="0" timeline="10" key="0"/>
+                    <bone_ref id="6" parent="0" timeline="9" key="0"/>
+                    <object_ref id="0" parent="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" parent="2" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" parent="4" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" parent="5" timeline="3" key="0" z_index="3"/>
+                    <object_ref id="4" parent="6" timeline="11" key="0" z_index="4"/>
+                    <object_ref id="5" parent="3" timeline="12" key="0" z_index="5"/>
+                </key>
+                <key id="1" time="800">
+                    <bone_ref id="0" timeline="4" key="0"/>
+                    <bone_ref id="1" parent="0" timeline="5" key="1"/>
+                    <bone_ref id="2" parent="1" timeline="6" key="1"/>
+                    <bone_ref id="3" parent="1" timeline="7" key="1"/>
+                    <bone_ref id="4" parent="1" timeline="8" key="1"/>
+                    <bone_ref id="5" parent="0" timeline="10" key="0"/>
+                    <bone_ref id="6" parent="0" timeline="9" key="0"/>
+                    <object_ref id="0" parent="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" parent="2" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" parent="4" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" parent="5" timeline="3" key="1" z_index="3"/>
+                    <object_ref id="4" parent="6" timeline="11" key="1" z_index="4"/>
+                    <object_ref id="5" parent="3" timeline="12" key="0" z_index="5"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Grashka_body">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="65" y="55" angle="270"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="Grashka_head">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="51" y="60" angle="268.331663"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="Grashka_right_arm">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-28" y="-20" angle="72.428741"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="Rleg_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="-24" y="-28" angle="90"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <object folder="0" file="5" x="-24" y="-29" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="4" obj="0" name="pelvis" object_type="bone">
+                <key id="0" spin="0">
+                    <bone y="7" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="5" obj="1" name="spine" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="10" y="5"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <bone x="11" y="5"/>
+                </key>
+            </timeline>
+            <timeline id="6" obj="2" name="head" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="16" y="-6"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <bone x="15" y="-6"/>
+                </key>
+            </timeline>
+            <timeline id="7" obj="3" name="Larm" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="15" y="9" angle="180"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <bone x="16" y="9" angle="180"/>
+                </key>
+            </timeline>
+            <timeline id="8" obj="4" name="Rarm" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="16" y="-18" angle="195.945"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <bone x="17" y="-18" angle="195.945"/>
+                </key>
+            </timeline>
+            <timeline id="9" obj="5" name="Lleg" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="-3" y="8" angle="270"/>
+                </key>
+            </timeline>
+            <timeline id="10" obj="6" name="Rleg" object_type="bone">
+                <key id="0" spin="0">
+                    <bone x="-3" y="-7" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="11" name="Lleg_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="-25" y="-38" angle="90"/>
+                </key>
+                <key id="1" time="800" spin="0">
+                    <object folder="0" file="6" x="-25" y="-37" angle="90"/>
+                </key>
+            </timeline>
+            <timeline id="12" name="Larm_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="8" x="-21" y="-34" angle="90"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
