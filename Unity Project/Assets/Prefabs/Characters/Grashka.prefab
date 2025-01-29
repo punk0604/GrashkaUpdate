@@ -229,4 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   axePrefab: {fileID: 4264124922876330139, guid: b6a42d7ade388f94783ac8a45ef8243b, type: 3}
-  velocity: 2
+  fireballPrefab: {fileID: 2050583209033892734, guid: e41b67815bcbb974d995a8bada9007aa, type: 3}
+  fireExplosionPrefab: {fileID: 4264124922876330139, guid: 46a3dbee7f70e1348baa232ef6848c31, type: 3}
+  axeVelocity: 2
+  fireballVelocity: 2
+  armed: 1

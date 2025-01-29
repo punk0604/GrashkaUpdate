@@ -333,9 +333,9 @@ GameObject:
   m_Component:
   - component: {fileID: 577729417}
   - component: {fileID: 577729416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,9 +468,9 @@ GameObject:
   m_Component:
   - component: {fileID: 881492195}
   - component: {fileID: 881492194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island6
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,9 +562,9 @@ GameObject:
   m_Component:
   - component: {fileID: 906071514}
   - component: {fileID: 906071513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -660,9 +660,9 @@ GameObject:
   m_Component:
   - component: {fileID: 923251994}
   - component: {fileID: 923251993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island5
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -760,9 +760,9 @@ GameObject:
   m_Component:
   - component: {fileID: 966463349}
   - component: {fileID: 966463348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,9 +893,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1292700449}
   - component: {fileID: 1292700448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1193,9 +1193,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1676915088}
   - component: {fileID: 1676915087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: island2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

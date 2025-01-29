@@ -18813,6 +18813,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4698681910327253197, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4779113374595591932, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
       propertyPath: m_TileAssetArray.Array.size
       value: 11
@@ -20028,6 +20032,14 @@ PrefabInstance:
     - target: {fileID: 4935250733754085515, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[5].Array.data[29].Y
       value: -90000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571344787811123349, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571344787811123349, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7648703462458030627, guid: c3c1fb84864dc574689f9076538ac2f0, type: 3}
       propertyPath: m_Name

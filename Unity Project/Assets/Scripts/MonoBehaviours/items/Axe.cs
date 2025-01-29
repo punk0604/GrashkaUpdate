@@ -10,6 +10,9 @@ public class Axe : MonoBehaviour
     [HideInInspector] public Animator animator;
     public GameObject axePrefab;
     private GameObject axeObject;
+    public GameObject fireballPrefab; // Reference to fireball
+    private GameObject fireballObject; // Reference to fireball object in the game
+    public GameObject fireExplosionPrefab; // Reference to fireball's explosion
     private Rigidbody2D rb2d;
     private float positiveSlope, negativeSlope;
     private Camera localCamera;
@@ -19,9 +22,10 @@ public class Axe : MonoBehaviour
     private enum Quadrant { East, South, West, North }
     private enum SlopeLine { Positive, Negative }
 
-    public float velocity;
+    public float axeVelocity;
+    public float fireballVelocity;
     private bool isAttacking;
-    private bool armed = true; // Ensures only one axe can be thrown
+    [HideInInspector]public bool armed = true; // Ensures only one axe can be thrown
 
     // Called when the script is being loaded
     private void Awake()
@@ -40,6 +44,10 @@ public class Axe : MonoBehaviour
         // Instantiate the axe object
         axeObject = Instantiate(axePrefab);
         axeObject.SetActive(false);
+
+        // Instantiate the fireball object
+        fireballObject = Instantiate(fireballPrefab);
+        fireballObject.SetActive(false);
     }
 
     private void Start()
@@ -69,10 +77,19 @@ public class Axe : MonoBehaviour
     // Called each frame
     private void Update()
     {
-        // Handle user input for throwing the axe
-        if (Input.GetMouseButtonDown(0) && armed)
+        // Checks if Player is armed (has axe and no active fireball)
+        if (armed)
         {
-            ThrowAxe();
+            // Handle user input for throwing the axe
+            if (Input.GetMouseButtonDown(0))
+            {
+                ThrowAxe();
+            }
+            // Casts Fireball
+            if (Input.GetButton("e"))
+            {
+                CastFireball();
+            }
         }
         UpdateState();
     }
@@ -99,7 +116,7 @@ public class Axe : MonoBehaviour
         {
             // Calculate the amount of time for ammo travel
             // Example: if velocity is 2, then 1/2 = 0.5 or a half second to travel across the screen
-            float travelDuration = 1.0f / velocity;
+            float travelDuration = 1.0f / axeVelocity;
             StartCoroutine(AxeArcCycle(mousePosition, travelDuration));
         }
     }
@@ -118,6 +135,43 @@ public class Axe : MonoBehaviour
         // Deactivate the axe and re-arm
         axeObject.SetActive(false);
         armed = true;
+    }
+
+    private void CastFireball()
+    {
+        armed = false;
+
+        // Convert the mouse position from screen space to world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Enable and set position
+        fireballObject.SetActive(true);
+        fireballObject.transform.position = transform.position;
+
+        // Start the travel arc
+        if (fireballObject != null)
+        {
+            // Calculate the amount of time for ammo travel
+            // Example: if velocity is 2, then 1/2 = 0.5 or a half second to travel across the screen
+            float travelDuration = 1.0f / fireballVelocity;
+            StartCoroutine(FireballArcCycle(mousePosition, travelDuration));
+        }
+    }
+
+    private IEnumerator FireballArcCycle(Vector3 destination, float duration)
+    {
+        // Get reference to the arc script
+        Arc arcScript = fireballObject.GetComponent<Arc>();
+
+        // Execute the travel arc
+        yield return StartCoroutine(arcScript.TravelArc(destination, duration));
+
+        // Deactivate the axe and re-arm
+        fireballObject.SetActive(false);
+        armed = true;
+
+        // Instantiate the fireball's explosion
+        Instantiate(fireExplosionPrefab, fireballObject.transform.position, Quaternion.identity);
     }
 
     private void TriggerAttack()
