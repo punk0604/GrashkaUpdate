@@ -27,7 +27,7 @@ public class Enemy : Character
         // inflict damage
         hitPoints -= damage;
 
-        // player is dead; kill off game object and exit loop
+        // enemy is dead; kill off game object and exit loop
         if (hitPoints <= 0)
         {
             KillCharacter();

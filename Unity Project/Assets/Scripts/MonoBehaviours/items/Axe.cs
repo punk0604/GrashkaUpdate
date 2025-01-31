@@ -166,7 +166,7 @@ public class Axe : MonoBehaviour
         // Execute the travel arc
         yield return StartCoroutine(arcScript.TravelArc(destination, duration));
 
-        // Deactivate the axe and re-arm
+        // Deactivate the fireball and re-arm
         fireballObject.SetActive(false);
         armed = true;
 
