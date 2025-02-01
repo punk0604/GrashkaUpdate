@@ -10,6 +10,7 @@ public class IceBall : MonoBehaviour
     GameObject player;
     Rigidbody2D rb2D;
     Vector2 movement = new Vector2();
+    Coroutine damageCoroutine;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,15 +56,20 @@ public class IceBall : MonoBehaviour
             Player player = collision.gameObject.GetComponent<Player>();
 
             // Start the damage coroutine; 0.0f will inflict a one-time damage
-            StartCoroutine(player.DamageCharacter(damageInflicted, 0.0f));
-
-            // Since the ammo has struck the enemy, set the ammo gameobject to be inactive
-            // Note it is inactive -- not "destroyed" so we can use object pooling for better performance
-            gameObject.SetActive(false);
+            if (damageCoroutine == null)
+            {
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f, 2));
+            }
+            else if (damageCoroutine != null)
+            {
+                StopCoroutine(damageCoroutine);
+                damageCoroutine = null;
+                //gameObject.SetActive(false);
+            }
         }
-        if (collision is BoxCollider2D) // && collision != parentCollider)
-        {
-            gameObject.SetActive(false);
-        }
+        //if (collision is BoxCollider2D) // && collision != parentCollider)
+        //{
+            //gameObject.SetActive(false);
+        //}
     }
 }

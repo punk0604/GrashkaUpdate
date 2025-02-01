@@ -1,6 +1,9 @@
 using System.Collections;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Player : Character
 {
@@ -18,10 +21,20 @@ public class Player : Character
     // A copy of the health bar prefab
     HealthBar healthBar;
 
+    public Rigidbody2D rigidBody;
+    public SpriteRenderer spriteRenderer;
+
+    private int enemyLayerInt = 8;
+    private int ammoLayerInt = 9;
+
     // Part of MonoBehaviour class; onEnable is called every time an object becomes both enabled and active
     private void OnEnable()
     {
         ResetCharacter();
+
+        rigidBody = GetComponent<Rigidbody2D>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public override void ResetCharacter()
@@ -98,11 +111,11 @@ public class Player : Character
         return false;
     }
 
-    public override IEnumerator DamageCharacter(int damage, float interval)
+    public override IEnumerator DamageCharacter(int damage, float interval, float objectImpact)
     {
         // continuously inflict damage until the loop breaks
-        while (true)
-        {
+        //while (true)
+        //{
             // inflict damage
             hitPoints.value = hitPoints.value - damage;
 
@@ -110,20 +123,44 @@ public class Player : Character
             if (hitPoints.value <= 0)
             {
                 KillCharacter();
-                break;
+                //break;
             }
 
-            if (interval > 0)
-            {
-                // wait a specified amount of seconds and inflict more damage
-                yield return new WaitForSeconds(interval);
-            }
-            else
-            {
-                // Interval = 0; inflict one-time damage and exit loop
-                break;
-            }
+        //Trigger Character Invinvibility
+        //objectimpact = 1: enemy collide, = 2: ammo collide
+        if (objectImpact == 1)
+        {
+            rigidBody.excludeLayers = 1 << enemyLayerInt;
         }
+        if (objectImpact == 2)
+        {
+            rigidBody.excludeLayers = 1 << ammoLayerInt;
+        }
+        //}
+        //flash for 2 seconds
+        for (int i = 0; i < 4; i++)
+        {
+            spriteRenderer.color = new Color(1f, 1f, 1f, .5f);
+            yield return new WaitForSeconds(0.25f);
+            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(0.25f);
+        }
+        //disable invincibility
+        rigidBody.excludeLayers = new LayerMask();
+
+        yield break;
+
+        //if (interval > 0)
+        //{
+        // wait a specified amount of seconds and inflict more damage
+        //yield return new WaitForSeconds(interval);
+        //}
+        // else
+        //{
+        // Interval = 0; inflict one-time damage and exit loop
+        //    break;
+        // }
+        //}
     }
 
     public override void KillCharacter()

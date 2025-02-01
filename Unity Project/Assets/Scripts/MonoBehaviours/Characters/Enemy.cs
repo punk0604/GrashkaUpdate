@@ -22,7 +22,7 @@ public class Enemy : Character
         hitPoints = startingHitPoints;
     }
 
-    public override IEnumerator DamageCharacter(int damage, float interval)
+    public override IEnumerator DamageCharacter(int damage, float interval, float objectImpact)
     {
         // inflict damage
         hitPoints -= damage;
@@ -59,24 +59,32 @@ public class Enemy : Character
 
             // If coroutine is not currently executing
             // start the coroutien to inflict damage to the player every 1 second
-            damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageStrength, 1.0f));
-        }
-    }
-
-    // Called by the Unity engine whenever the current enemy object stops touching another object's Collider2d
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // See if the enemy has just stopped colliding with the player
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // If coroutine is currrently executing
-            if (damageCoroutine != null)
+            if (damageCoroutine == null)
+            {
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageStrength, 0.0f, 1));
+            }
+            else if (damageCoroutine != null)
             {
                 StopCoroutine(damageCoroutine);
                 damageCoroutine = null;
             }
         }
     }
+
+    // Called by the Unity engine whenever the current enemy object stops touching another object's Collider2d
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    // See if the enemy has just stopped colliding with the player
+    //if (collision.gameObject.CompareTag("Player"))
+    //{
+    // If coroutine is currrently executing
+    //if (damageCoroutine != null)
+    //{
+        //StopCoroutine(damageCoroutine);
+        //damageCoroutine = null;
+    //}
+    //}
+    //}
 
     public override void KillCharacter()
     {

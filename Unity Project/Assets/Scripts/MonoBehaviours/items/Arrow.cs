@@ -5,6 +5,8 @@ public class Arrow : MonoBehaviour
     // Amount of damage the ammunition will inflict on an enemy
     public int damageInflicted;
 
+    Coroutine damageCoroutine;
+
     // public Collider2D parentCollider;
 
     // Called when another object enters the trigger collider attached to the ammo gameobject
@@ -16,16 +18,27 @@ public class Arrow : MonoBehaviour
             // Retrieve the player script from the enemy object
             Player player = collision.gameObject.GetComponent<Player>();
 
+            if (damageCoroutine == null)
+            {
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f, 2));
+            }
+            else if (damageCoroutine != null)
+            {
+                StopCoroutine(damageCoroutine);
+                damageCoroutine = null;
+                //gameObject.SetActive(false);
+            }
+
             // Start the damage coroutine; 0.0f will inflict a one-time damage
-            StartCoroutine(player.DamageCharacter(damageInflicted, 0.0f));
+            //StartCoroutine(player.DamageCharacter(damageInflicted, 0.0f));
 
             // Since the ammo has struck the enemy, set the ammo gameobject to be inactive
             // Note it is inactive -- not "destroyed" so we can use object pooling for better performance
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
-        if (collision is BoxCollider2D) // && collision != parentCollider)
-        {
-            gameObject.SetActive(false);
-        }
+        //if (collision is BoxCollider2D) // && collision != parentCollider)
+        //{
+            //gameObject.SetActive(false);
+        //}
     }
 }

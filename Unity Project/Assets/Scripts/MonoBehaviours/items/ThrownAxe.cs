@@ -25,7 +25,8 @@ public class ThrownAxe : MonoBehaviour
                 Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
                 // Start the damage coroutine; 0.0f will inflict a one-time damage
-                StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f));
+                StartCoroutine(enemy.DamageCharacter(damageInflicted, 0.0f, 2));
+
 
                 // Deactivate Ammo and rearm Grashka if it can't pierce enemies
                 if (!piercing)
