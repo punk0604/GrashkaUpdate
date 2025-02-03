@@ -1,17 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-
 public class TextBoxRotateIntro : MonoBehaviour
 {
-    // Reference to the TextMeshProUGUI component
     public TextMeshProUGUI textBox;
-
-    // Array of strings for different lines
     public string[] textBlocks = new string[] {
         "Princess Flay: Ugh! Mom I’m so bored. Tell me the story about how you got your axe again!",
         "Queen Grashka: You would prefer boredom to war, my child. This peace is why I ventured for the axe in the first place…",
@@ -20,19 +15,20 @@ public class TextBoxRotateIntro : MonoBehaviour
     };
 
     private int currentTextIndex = 0;
-
-    // Reference to the Devil_still GameObject
     public GameObject Devil_still;
-
-    public float typingSpeed = 0.001f; // Delay between each letter
-    private bool isTyping = false;   // To prevent skipping while typing
-    private Coroutine typingCoroutine; // To handle the current typing process
+    public float typingSpeed = 0.001f;
+    private bool isTyping = false;
+    private Coroutine typingCoroutine;
+    
+    public Image fadePanel; // UI Panel for fading
+    public float fadeDuration = 1.5f;
 
     void Start()
     {
+        fadePanel.gameObject.SetActive(false);
         if (textBlocks.Length > 0)
         {
-            StartTypingEffect();  // Start typing the first line
+            StartTypingEffect();
         }
     }
 
@@ -43,20 +39,20 @@ public class TextBoxRotateIntro : MonoBehaviour
             Devil_still.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isTyping) // Proceed to the next line
+        if (Input.GetKeyDown(KeyCode.Space) && !isTyping)
         {
             if (currentTextIndex < textBlocks.Length - 1)
             {
                 currentTextIndex++;
-                StartTypingEffect(); // Start typing the next line
+                StartTypingEffect();
             }
-            else // No more text; transition to the next scene
+            else
             {
-                SceneManager.LoadScene("Hell_1");
+                StartCoroutine(FadeToBlack());
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt) && isTyping) // Skip the current typing effect
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && isTyping)
         {
             SkipTyping();
         }
@@ -66,7 +62,7 @@ public class TextBoxRotateIntro : MonoBehaviour
     {
         if (typingCoroutine != null)
         {
-            StopCoroutine(typingCoroutine); // Stop any previous coroutine
+            StopCoroutine(typingCoroutine);
         }
         typingCoroutine = StartCoroutine(TypeText(textBlocks[currentTextIndex]));
     }
@@ -74,23 +70,42 @@ public class TextBoxRotateIntro : MonoBehaviour
     IEnumerator TypeText(string text)
     {
         isTyping = true;
-        textBox.text = ""; // Clear the text before typing
+        textBox.text = "";
         foreach (char letter in text.ToCharArray())
         {
             textBox.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        isTyping = false; // Typing is done
+        isTyping = false;
     }
 
     void SkipTyping()
     {
         if (typingCoroutine != null)
         {
-            StopCoroutine(typingCoroutine); // Stop the current typing coroutine
+            StopCoroutine(typingCoroutine);
         }
-        textBox.text = textBlocks[currentTextIndex]; // Display the full text
-        isTyping = false; // Allow moving to the next line
+        textBox.text = textBlocks[currentTextIndex];
+        isTyping = false;
+    }
+
+    IEnumerator FadeToBlack()
+    {
+        fadePanel.gameObject.SetActive(true);
+
+        float elapsedTime = 0;
+        Color panelColor = fadePanel.color;
+        
+        while (elapsedTime < fadeDuration)
+        {
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadePanel.color = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(2); // Wait before loading next scene
+        SceneManager.LoadScene("Hell_1");
     }
 }
 
