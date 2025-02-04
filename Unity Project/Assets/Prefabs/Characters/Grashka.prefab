@@ -215,6 +215,8 @@ MonoBehaviour:
   hitPoints: {fileID: 11400000, guid: 360ba24bc5bdc3d47af0c86dab733561, type: 2}
   inventoryPrefab: {fileID: 2581338992195673786, guid: d453dcca2aa0a4a2481bd686a9ecc5df, type: 3}
   healthBarPrefab: {fileID: 3620692400302748260, guid: 6550a987f4bc0ba4d97b6571221f06a5, type: 3}
+  rigidBody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
 --- !u!114 &7609907176642451112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +233,8 @@ MonoBehaviour:
   axePrefab: {fileID: 4264124922876330139, guid: b6a42d7ade388f94783ac8a45ef8243b, type: 3}
   fireballPrefab: {fileID: 2050583209033892734, guid: e41b67815bcbb974d995a8bada9007aa, type: 3}
   fireExplosionPrefab: {fileID: 4264124922876330139, guid: 46a3dbee7f70e1348baa232ef6848c31, type: 3}
+  fireWallPrefab: {fileID: 4264124922876330139, guid: 67b84caacc1efbc41b0762b6e01e6bf8, type: 3}
   axeVelocity: 2
   fireballVelocity: 2
+  firewallVelocity: 2
   armed: 1

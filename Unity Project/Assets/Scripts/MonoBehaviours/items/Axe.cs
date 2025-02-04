@@ -13,6 +13,7 @@ public class Axe : MonoBehaviour
     public GameObject fireballPrefab; // Reference to fireball
     private GameObject fireballObject; // Reference to fireball object in the game
     public GameObject fireExplosionPrefab; // Reference to fireball's explosion
+    public GameObject fireWallPrefab; // Reference to firewall's explosion
     private Rigidbody2D rb2d;
     private float positiveSlope, negativeSlope;
     private Camera localCamera;
@@ -24,6 +25,7 @@ public class Axe : MonoBehaviour
 
     public float axeVelocity;
     public float fireballVelocity;
+    public float firewallVelocity;
     private bool isAttacking;
     [HideInInspector]public bool armed = true; // Ensures only one axe can be thrown
 
@@ -89,6 +91,11 @@ public class Axe : MonoBehaviour
             if (Input.GetButton("e"))
             {
                 CastFireball();
+            }
+            // Casts Firewall
+            if (Input.GetButton("f"))
+            {
+                CastFirewall();
             }
         }
         UpdateState();
@@ -172,6 +179,48 @@ public class Axe : MonoBehaviour
 
         // Instantiate the fireball's explosion
         Instantiate(fireExplosionPrefab, fireballObject.transform.position, Quaternion.identity);
+    }
+
+    private void CastFirewall()
+    {
+        armed = false;
+
+        // Convert the mouse position from screen space to world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Enable and set position
+        fireballObject.SetActive(true);
+        fireballObject.transform.position = transform.position;
+
+        // Start the travel arc
+        if (fireballObject != null)
+        {
+            // Calculate the amount of time for ammo travel
+            // Example: if velocity is 2, then 1/2 = 0.5 or a half second to travel across the screen
+            float travelDuration = 1.0f / firewallVelocity;
+
+            Vector3 relativePos = mousePosition - transform.position;
+
+            Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.forward);
+
+            StartCoroutine(FirewallArcCycle(mousePosition, travelDuration, rotation));
+        }
+    }
+
+    private IEnumerator FirewallArcCycle(Vector3 destination, float duration, Quaternion rotation)
+    {
+        // Get reference to the arc script
+        Arc arcScript = fireballObject.GetComponent<Arc>();
+
+        // Execute the travel arc
+        yield return StartCoroutine(arcScript.TravelArc(destination, duration));
+
+        // Deactivate the fireball and re-arm
+        fireballObject.SetActive(false);
+        armed = true;
+
+        // Instantiate the fireball's explosion
+        Instantiate(fireWallPrefab, fireballObject.transform.position, rotation);
     }
 
     private void TriggerAttack()

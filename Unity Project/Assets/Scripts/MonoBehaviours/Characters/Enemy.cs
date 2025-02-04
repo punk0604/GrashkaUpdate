@@ -17,11 +17,13 @@ public class Enemy : Character
         ResetCharacter();
     }
 
+    // Give Enemy its starting hp
     public override void ResetCharacter()
     {
         hitPoints = startingHitPoints;
     }
 
+    // Apply damage to Enemy, objectimpact = 1: player attack collide, = 2: player ammo collide, interval yet to be implemented
     public override IEnumerator DamageCharacter(int damage, float interval, float objectImpact)
     {
         // inflict damage
@@ -33,18 +35,14 @@ public class Enemy : Character
             KillCharacter();
         }
 
-        yield return null;
+        if (interval > 0)
+        {
+            // wait a specified amount of seconds and inflict more damage
+            yield return new WaitForSeconds (interval);
 
-        // if (interval > 0)
-        // {
-        //     // wait a specified amount of seconds and inflict more damage
-        //     yield return new WaitForSeconds (interval);
-        // }
-        // else
-        // {
-        //     interval = 0; // inflict one-time damage and exit loop
-        //     break;
-        // }
+            // inflict damage
+            hitPoints -= damage;
+        }
         
     }
 
