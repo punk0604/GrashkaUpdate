@@ -52,6 +52,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         dialogueActive = true;
+        Time.timeScale = 0f; // Pause game time
         if (playerMovement != null)
         {
             playerMovement.isFrozen = true; // Freeze movement
@@ -84,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSecondsRealtime(textSpeed); // Use unscaled time so it works when paused
         }
         isTyping = false;
     }
@@ -93,6 +94,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueActive = false;
         gameObject.SetActive(false);
+        Time.timeScale = 1f; // Resume game time
 
         if (playerMovement != null)
         {
@@ -100,4 +102,5 @@ public class DialogueManager : MonoBehaviour
         }
     }
 }
+
 
