@@ -20,7 +20,8 @@ public class Arrow : MonoBehaviour
 
             if (damageCoroutine == null)
             {
-                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f, 2));
+                player.MakeInvincible(2);
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f));
             }
             else if (damageCoroutine != null)
             {

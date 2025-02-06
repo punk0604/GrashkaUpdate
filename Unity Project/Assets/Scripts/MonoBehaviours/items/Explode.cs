@@ -35,7 +35,7 @@ public class Explode : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             // Start the damage coroutine; 0.0f will inflict a one-time damage
-            StartCoroutine(enemy.DamageCharacter(explosionDamageInflicted, 0.0f, 1));
+            StartCoroutine(enemy.DamageCharacter(explosionDamageInflicted, 0.0f));
         }
     }
 

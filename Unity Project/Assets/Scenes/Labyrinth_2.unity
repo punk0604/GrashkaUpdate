@@ -9463,7 +9463,6 @@ MonoBehaviour:
   - Press WASD to move, and Left Mouse Button to attack.
   Devil_still: {fileID: 0}
   typingSpeed: 0.001
-  fadePanel: {fileID: 0}
   fadeDuration: 1.5
 --- !u!114 &1102014123
 MonoBehaviour:
@@ -14619,8 +14618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84cc984418b57d24fa3e465c12472294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 0}
-  dialogueLines: []
+  dialogueText: {fileID: 1102014123}
+  dialogueLines:
+  - A labyrinth?? My, he has changed. I must find the Princess quickly..
   textSpeed: 0.05
   player: {fileID: 0}
 --- !u!4 &1199891817

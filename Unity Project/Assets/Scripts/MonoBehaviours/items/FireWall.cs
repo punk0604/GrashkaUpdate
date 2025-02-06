@@ -31,7 +31,7 @@ public class FireWall : MonoBehaviour
         {
             // Inflict damage, then again interval seconds later
             Enemy enemyScript = collision.GetComponent<Enemy>();
-            StartCoroutine(enemyScript.DamageCharacter(burningDamageInflicted, interval, 1));
+            StartCoroutine(enemyScript.DamageCharacter(burningDamageInflicted, interval));
         }
     }
 }

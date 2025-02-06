@@ -25,6 +25,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(character);
         // Retrieve and store max hit points for the character
         maxHitPoints = character.maxHitPoints;
     }

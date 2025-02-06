@@ -23,8 +23,8 @@ public class Enemy : Character
         hitPoints = startingHitPoints;
     }
 
-    // Apply damage to Enemy, objectimpact = 1: player attack collide, = 2: player ammo collide, interval yet to be implemented
-    public override IEnumerator DamageCharacter(int damage, float interval, float objectImpact)
+    // Apply damage to Enemy, interval is number of seconds before damageis dealt again
+    public override IEnumerator DamageCharacter(int damage, float interval)
     {
         // inflict damage
         hitPoints -= damage;
@@ -59,7 +59,8 @@ public class Enemy : Character
             // start the coroutien to inflict damage to the player every 1 second
             if (damageCoroutine == null)
             {
-                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageStrength, 0.0f, 1));
+                player.MakeInvincible(1);
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageStrength, 0.0f));
             }
             else if (damageCoroutine != null)
             {

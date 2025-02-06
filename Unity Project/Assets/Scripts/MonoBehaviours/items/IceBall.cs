@@ -58,7 +58,8 @@ public class IceBall : MonoBehaviour
             // Start the damage coroutine; 0.0f will inflict a one-time damage
             if (damageCoroutine == null)
             {
-                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f, 2));
+                player.MakeInvincible(2);
+                damageCoroutine ??= StartCoroutine(player.DamageCharacter(damageInflicted, 1.0f));
             }
             else if (damageCoroutine != null)
             {

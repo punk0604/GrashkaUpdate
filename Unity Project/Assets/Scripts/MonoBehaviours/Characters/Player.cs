@@ -3,6 +3,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Player : Character
@@ -24,8 +25,10 @@ public class Player : Character
     public Rigidbody2D rigidBody;
     public SpriteRenderer spriteRenderer;
 
-    private int enemyLayerInt = 8;
-    private int ammoLayerInt = 9;
+    //private int enemyLayerInt = 8;
+    //private int ammoLayerInt = 9;
+    private const int BLOCKING_INT = 6;
+    private const int INVINCIBLE_INT = 11;
 
     // Part of MonoBehaviour class; onEnable is called every time an object becomes both enabled and active
     private void OnEnable()
@@ -110,22 +113,14 @@ public class Player : Character
         // return false if hit poitns is at max and can't be adjsuted
         return false;
     }
-
-    public override IEnumerator DamageCharacter(int damage, float interval, float objectImpact)
+    public void MakeInvincible(int objectImpact)
     {
-        // continuously inflict damage until the loop breaks
-        //while (true)
-        //{
-            // inflict damage
-            hitPoints.value = hitPoints.value - damage;
+        StartCoroutine(Invincible(objectImpact));
+    }
 
-            // player is dead; kill off game object and exit loop
-            if (hitPoints.value <= 0)
-            {
-                KillCharacter();
-                //break;
-            }
-
+    public IEnumerator Invincible(int objectImpact)
+    {
+        /*
         //Trigger Character Invinvibility
         //objectimpact = 1: enemy collide, = 2: ammo collide
         if (objectImpact == 1)
@@ -135,8 +130,12 @@ public class Player : Character
         if (objectImpact == 2)
         {
             rigidBody.excludeLayers = 1 << ammoLayerInt;
-        }
-        //}
+        }*/
+
+        //rigidBody.excludeLayers = 1 << enemyLayerInt;
+        //rigidBody.excludeLayers = 1 << ammoLayerInt;
+        rigidBody.gameObject.layer = INVINCIBLE_INT;
+
         //flash for 2 seconds
         for (int i = 0; i < 4; i++)
         {
@@ -146,9 +145,52 @@ public class Player : Character
             yield return new WaitForSeconds(0.25f);
         }
         //disable invincibility
-        rigidBody.excludeLayers = new LayerMask();
+        rigidBody.gameObject.layer = BLOCKING_INT;
 
         yield break;
+    }
+    public override IEnumerator DamageCharacter(int damage, float interval)
+    {
+        // continuously inflict damage until the loop breaks
+        //while (true)
+        //{
+        // inflict damage
+        hitPoints.value = hitPoints.value - damage;
+
+        // player is dead; kill off game object and exit loop
+        if (hitPoints.value <= 0)
+        {
+            KillCharacter();
+            //break;
+        }
+
+        yield break;
+
+        /*
+    //Trigger Character Invinvibility
+    //objectimpact = 1: enemy collide, = 2: ammo collide
+    if (objectImpact == 1)
+    {
+        rigidBody.excludeLayers = 1 << enemyLayerInt;
+    }
+    if (objectImpact == 2)
+    {
+        rigidBody.excludeLayers = 1 << ammoLayerInt;
+    }
+    //}
+    //flash for 2 seconds
+    for (int i = 0; i < 4; i++)
+    {
+        spriteRenderer.color = new Color(1f, 1f, 1f, .5f);
+        yield return new WaitForSeconds(0.25f);
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        yield return new WaitForSeconds(0.25f);
+    }
+    //disable invincibility
+    rigidBody.excludeLayers = new LayerMask();
+        */
+
+
 
         //if (interval > 0)
         //{

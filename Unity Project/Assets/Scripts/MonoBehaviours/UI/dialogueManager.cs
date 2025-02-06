@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
             if (isTyping)
             {
                 StopAllCoroutines();
-                dialogueText.text = dialogueLines[currentLineIndex];
+                dialogueText.text = dialogueLines[currentLineIndex - 1];
                 isTyping = false;
             }
             else

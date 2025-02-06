@@ -37,7 +37,7 @@ public class Arc : MonoBehaviour
         }
 
         // Deactivate the object if it reaches its destination before hitting a Wall
-        //gameObject.SetActive(false);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.SetActive(false);
+        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
