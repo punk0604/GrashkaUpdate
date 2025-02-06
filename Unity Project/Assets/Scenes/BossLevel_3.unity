@@ -1018,6 +1018,7 @@ MonoBehaviour:
   dialogueLines:
   - Fear is an old friend. He shall not harm the Princess. She must be around here
     somewhere...
+  - Press Space to continue.
   textSpeed: 0.05
   player: {fileID: 0}
 --- !u!4 &1275148613
