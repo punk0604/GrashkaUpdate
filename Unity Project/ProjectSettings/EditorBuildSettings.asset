@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 033ce83421b59ab4dae19829fd8da3eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UnfinishedLore/Hell1Lore.unity
     guid: b4512585206f6304888905805e41c451
   - enabled: 1
     path: Assets/Scenes/Hell_1.unity
     guid: 06e19f4241119ab4c81df9ad796b187c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UnfinishedLore/Labrynth2Lore.unity
     guid: b0ce73ae8824dda44b83b3fdd6fba8b6
   - enabled: 1
@@ -32,10 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: dfa1af810f2f8de488bd44819cdad6d3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UnfinishedLore/BossLevelLore.unity
     guid: ee2dc1de7899ef94a82ff5a69cbe718e
   - enabled: 1
     path: Assets/Scenes/Outro.unity
     guid: 643d7a792f07f4443aafc8e66508f6f8
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: 9cb5df742d7624096bb476a55529d980
   m_configObjects: {}
