@@ -19,13 +19,9 @@ public class TextBoxRotateIntro : MonoBehaviour
     public float typingSpeed = 0.001f;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
-    
-    //public Image fadePanel; // UI Panel for fading
-    public float fadeDuration = 1.5f;
 
     void Start()
     {
-        //fadePanel.gameObject.SetActive(false);
         if (textBlocks.Length > 0)
         {
             StartTypingEffect();
@@ -46,12 +42,10 @@ public class TextBoxRotateIntro : MonoBehaviour
                 currentTextIndex++;
                 StartTypingEffect();
             }
-            /*
             else
             {
-                StartCoroutine(FadeToBlack());
+                SceneManager.LoadScene("Hell_1");
             }
-            */
         }
 
         if (Input.GetKeyDown(KeyCode.LeftAlt) && isTyping)
@@ -90,25 +84,4 @@ public class TextBoxRotateIntro : MonoBehaviour
         textBox.text = textBlocks[currentTextIndex];
         isTyping = false;
     }
-    /*
-    IEnumerator FadeToBlack()
-    {
-        fadePanel.gameObject.SetActive(true);
-
-        float elapsedTime = 0;
-        Color panelColor = fadePanel.color;
-        
-        while (elapsedTime < fadeDuration)
-        {
-            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            fadePanel.color = new Color(panelColor.r, panelColor.g, panelColor.b, alpha);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        
-        yield return new WaitForSeconds(2); // Wait before loading next scene
-        SceneManager.LoadScene("Hell_1");
-    }
-    */
 }
-
