@@ -14621,6 +14621,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1102014123}
   dialogueLines:
   - A labyrinth?? My, he has changed. I must find the Princess quickly..
+  - Press Space to continue.
   textSpeed: 0.05
   player: {fileID: 0}
 --- !u!4 &1199891817

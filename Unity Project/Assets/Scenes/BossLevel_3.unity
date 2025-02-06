@@ -1220,6 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 268517776}
   dialogueLines:
+<<<<<<< HEAD
   - 'Grashka: Ice? In Hell? It seems the very foundation of Hell has been upended... '
   - 'Grashka: Are those... the Undead? '
   - 'Devil: This is the consequence of your actions. I warned you of the path you
@@ -1234,6 +1235,11 @@ MonoBehaviour:
     be your final day.'
   - 'Grashka: You will feel the flames of Hell one last time as your soul is consumed
     by them. '
+=======
+  - Fear is an old friend. He shall not harm the Princess. She must be around here
+    somewhere...
+  - Press Space to continue.
+>>>>>>> 315dce98a9ade30a0f070d63f8eab9454e50de11
   textSpeed: 0.05
   player: {fileID: 1158618590}
 --- !u!4 &1138503428

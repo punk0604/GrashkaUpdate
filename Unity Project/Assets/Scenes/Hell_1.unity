@@ -22595,8 +22595,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 954377743}
   dialogueLines:
-  - Imps.. Of course. Vile creatures. (Click to Throw Axe, E to cast Fireball, and
-    F to cast Firewall, Space to continue.)
+  - Imps.. Of course. Vile creatures.
+  - Click to Throw Axe, Press E to Cast Fire-ball, and Press F to Cast a Fire-wall
+  - Wait a few seconds after casting fiery spells, they need to recharge!
+  - Press Space to continue.
   textSpeed: 0.05
   player: {fileID: 0}
 --- !u!4 &1575744068

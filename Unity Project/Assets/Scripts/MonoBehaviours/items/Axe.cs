@@ -28,6 +28,8 @@ public class Axe : MonoBehaviour
     public float firewallVelocity;
     private bool isAttacking;
     [HideInInspector]public bool armed = true; // Ensures only one axe can be thrown
+    public float hellfireTimer; // Time before another infernal spell can be cast
+    private float hellfireTimerMax; // Saved maximum hellfireTimer for resetting
 
     // Called when the script is being loaded
     private void Awake()
@@ -68,6 +70,9 @@ public class Axe : MonoBehaviour
         // This is to help determine what direction the player should face when the mouse is clicked
         positiveSlope = GetSlope(lowerLeft, upperRight);
         negativeSlope = GetSlope(upperLeft, lowerRight);
+
+        // Save hellfireTimerMax to hellfireTimer (as set in Inspector)
+        hellfireTimerMax = hellfireTimer;
     }
 
     // Called when the gameobject is destroyed
@@ -79,6 +84,12 @@ public class Axe : MonoBehaviour
     // Called each frame
     private void Update()
     {
+        // Decrement the Timer, if it needs to go further (prevents negative overflow)
+        if (hellfireTimer > -1f)
+        {
+            hellfireTimer -= Time.deltaTime;
+        }
+
         // Checks if Player is armed (has axe and no active fireball)
         if (armed)
         {
@@ -87,15 +98,25 @@ public class Axe : MonoBehaviour
             {
                 ThrowAxe();
             }
-            // Casts Fireball
-            if (Input.GetButton("e"))
+            // If Grashka's flame rekindles (timer passes zero), then she can cast spells
+            if (hellfireTimer < 0)
             {
-                CastFireball();
-            }
-            // Casts Firewall
-            if (Input.GetButton("f"))
-            {
-                CastFirewall();
+                // Casts Fireball
+                if (Input.GetButton("e"))
+                {
+                    CastFireball();
+
+                    // Reset hellfireTimer to hellfireTimerMax
+                    hellfireTimer = hellfireTimerMax;
+                }
+                // Casts Firewall
+                if (Input.GetButton("f"))
+                {
+                    CastFirewall();
+
+                    // Reset hellfireTimer to hellfireTimerMax
+                    hellfireTimer = hellfireTimerMax;
+                }
             }
         }
         UpdateState();

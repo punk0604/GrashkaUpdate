@@ -238,3 +238,4 @@ MonoBehaviour:
   fireballVelocity: 2
   firewallVelocity: 2
   armed: 1
+  hellfireTimer: 3
